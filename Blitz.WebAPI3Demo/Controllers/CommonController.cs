@@ -12,7 +12,6 @@ namespace Blitz.WebAPI3Demo.Controllers
     /// <summary>
     /// Common Controller
     /// </summary>
-    [Route("/")]
     [ApiController]
     [ApiExplorerSettings(GroupName = "common")]
     public class CommonController : ControllerBase
@@ -32,7 +31,7 @@ namespace Blitz.WebAPI3Demo.Controllers
         /// Version Information
         /// </summary>
         /// <returns>(sic)</returns>
-        [HttpGet("version")]
+        [HttpGet("/version")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Version()
@@ -44,7 +43,7 @@ namespace Blitz.WebAPI3Demo.Controllers
         /// Health Check
         /// </summary>
         /// <returns></returns>
-        [HttpGet("version")]
+        [HttpGet("/health")]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

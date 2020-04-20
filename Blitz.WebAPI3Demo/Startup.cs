@@ -69,7 +69,8 @@ namespace Blitz.WebAPI3Demo
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc(Images_Title, this.MakeOpenApiInfo(Images_Title, Program.ProgramMetadata.MajorVersion, $"{Images_Title} Demos", new Uri(Program.ProgramMetadata.GitHubUrl)));
-                c.SwaggerDoc(Common_Title, this.MakeOpenApiInfo(Common_Title, Program.ProgramMetadata.MajorVersion, $"{Images_Title} Demos", new Uri(Program.ProgramMetadata.GitHubUrl)));
+
+                c.SwaggerDoc(Common_Title, this.MakeOpenApiInfo(Common_Title, Program.ProgramMetadata.MajorVersion, $"{Common_Title} Demos", new Uri(Program.ProgramMetadata.GitHubUrl)));
 
                 var xmlfile = $"{Assembly.GetExecutingAssembly().GetName().Name}.json";
                 xmlfile = System.IO.Path.Combine(AppContext.BaseDirectory, xmlfile);
@@ -77,7 +78,6 @@ namespace Blitz.WebAPI3Demo
                 {
                     c.IncludeXmlComments(xmlfile);
                 }
-
 
             });
 
@@ -90,8 +90,8 @@ namespace Blitz.WebAPI3Demo
                 Title = title,
                 Contact = new OpenApiContact()
                 {
-                    Email = "stuart.t.williams@outlook.com",
-                    Name = "Stuart Williams",
+                    Email = Program.ProgramMetadata.TeamEmail,
+                    Name = Program.ProgramMetadata.TeamName,
                     Url = repo
                 },
                 Description = description,
@@ -126,6 +126,7 @@ namespace Blitz.WebAPI3Demo
 
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint($"/swagger/{Images_Title}/swagger.json", $"{Images_Title} {Program.ProgramMetadata.MajorVersion}");
+
                 c.SwaggerEndpoint($"/swagger/{Common_Title}/swagger.json", $"{Common_Title} {Program.ProgramMetadata.MajorVersion}");
             });
 
