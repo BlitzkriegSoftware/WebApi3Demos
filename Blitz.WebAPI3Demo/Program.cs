@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Blitz.WebAPI3Demo.Libs;
@@ -13,6 +14,7 @@ namespace Blitz.WebAPI3Demo
     /// <summary>
     /// Entry Class
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class Program
     {
         /// <summary>

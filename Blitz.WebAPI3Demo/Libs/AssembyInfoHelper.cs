@@ -1,9 +1,12 @@
-﻿namespace Blitz.WebAPI3Demo.Libs
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Blitz.WebAPI3Demo.Libs
 {
     /// <summary>
     /// Helper: Assembly Info
     /// <para>Translates the <c>CustomAttributeData</c> to a usable string value</para>
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public static class AssembyInfoHelper
     {
         /// <summary>

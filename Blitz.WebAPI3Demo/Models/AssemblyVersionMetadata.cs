@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Blitz.WebAPI3Demo.Models
 {
     /// <summary>
     /// Model: Assembly Version Metadata
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class AssemblyVersionMetadata
     {
         /// <summary>
@@ -90,7 +92,7 @@ namespace Blitz.WebAPI3Demo.Models
                 case "assemblycopyrightattribute": this.Copyright = value; break;
                 case "assemblycompanyattribute": this.Company = value; break;
                 case "assemblydescriptionattribute": this.Description = value; break;
-                case "assemblyinformationversionattribute": this.InformationalVersion = value; break;
+                case "assemblyinformationalversionattribute": this.InformationalVersion = value; break;
                 case "assemblyfileversionattribute": this.SemanticVersion = value; break;
                 case "assemblyproductattribute": this.Product = value; break;
             }

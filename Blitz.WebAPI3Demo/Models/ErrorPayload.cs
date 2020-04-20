@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Blitz.WebAPI3Demo.Models
 {
     /// <summary>
     /// Error Payload
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class ErrorPayload
     {
         /// <summary>
