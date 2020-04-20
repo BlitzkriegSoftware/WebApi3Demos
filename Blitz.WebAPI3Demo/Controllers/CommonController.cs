@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
@@ -30,6 +31,7 @@ namespace Blitz.WebAPI3Demo.Controllers
         /// </summary>
         /// <returns>(sic)</returns>
         [HttpGet("/version")]
+        [AllowAnonymous]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Version()
@@ -43,6 +45,7 @@ namespace Blitz.WebAPI3Demo.Controllers
         /// <returns></returns>
         [HttpGet("/health")]
         [Produces("application/json")]
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ObjectResult HealthCheck()

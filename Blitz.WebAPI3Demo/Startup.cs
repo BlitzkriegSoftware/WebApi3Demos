@@ -56,6 +56,7 @@ namespace Blitz.WebAPI3Demo
             });
 
             services.AddControllers();
+            services.AddHealthChecks();
 
             services.AddCors(options =>
             {
@@ -133,6 +134,7 @@ namespace Blitz.WebAPI3Demo
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health");
             });
         }
     }
